@@ -4,11 +4,11 @@ In game dev, generative art, and creative coding, `sine` is a ubiquitous functio
 
 On its own, `sine` has some undesirable qualities which most developers will encounter and adjust in isolated situations. The purpose of *Bounded Sine* is to solve these issues up-front in a reusable way:
 
-| Sine                    | Bounded Sine                                    | Benefits                                                    |
-| ----------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
-| Period = `2 * PI`       | Period = `period`, which defaults to 1.         | No longer need to work in radians. Period can be any value. |
-| Is bounded by `[-1, 1]` | Is bounded by `[yMin, yMax]`                    | Bounds can now match the min/max value of a parameter.      |
-| `fx(0) = 0`             | `fx(0) = yStart` where `yMin <= yStart <= yMax` | Starting value can be set rather than it being fixed.       |
+| Sine                    | Bounded Sine                                    | Benefits                                                            |
+| ----------------------- | ----------------------------------------------- | -----------------------------------------------------------         |
+| Period = `2 * PI`       | Period = `period`, which defaults to 1.         | No longer need to work in radians. Period can be any value.         |
+| Is bounded by `[-1, 1]` | Is bounded by `[yMin, yMax]`                    | Bounds can now match the desired min/max value of a parameter.      |
+| `fx(0) = 0`             | `fx(0) = yStart` where `yMin <= yStart <= yMax` | Starting value can be set rather than it being fixed.               |
 
 Here's an example:
 
@@ -16,15 +16,15 @@ Here's an example:
 const fn = boundedSine({ yStart: 2, yMax: 3, yMin: 0 });
 ```
 
-![bounded-sine-1](./media/bounded-sine-1.png)
+![bounded-sine-1](https://github.com/mracette/bounded-sine/blob/main/media/bounded-sine-1.png?raw=true)
 
-Bounded Sine also takes `period` and `invert` parameters:
+Bounded Sine also takes `period` and `invert` parameters. Note that when invert is `true`, `f(0)` does not always equal `yStart` because the function is reflected across its average y-value.
 
 ```js
 const fn = boundedSine({ yStart: 2, yMax: 3, yMin: 0, period: 10, invert: true });
 ```
 
-![bounded-sine-2](./media/bounded-sine-2.png)
+![bounded-sine-2](https://github.com/mracette/bounded-sine/blob/main/media/bounded-sine-2.png?raw=true)
 
 # API
 
@@ -37,7 +37,7 @@ const fn = boundedSine({ yStart: 2, yMax: 3, yMin: 0, period: 10, invert: true }
 | `options.period`     | `1`     | The length of one cycle of the curve.              |
 | `options.translateX` | `0`     | Translation applied in the x-direction.            |
 | `options.translateY` | `0`     | Translation applied in the y-direction.            |
-| `options.invert`     | `false` | Reflect the sine curve around the average y-value. |
+| `options.invert`     | `false` | Reflects the functions around the average y-value. |
 
 # Installation and Usage
 

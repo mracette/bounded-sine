@@ -1,7 +1,9 @@
 {
   "name": "bounded-sine",
   "version": "0.0.2",
-  "description": "Sine function, but better.",
+  "description": "Math.sin, but better.",
+  "homepage": "https://github.com/mracette/bounded-sine#bounded-sine",
+  "keywords": ["gamedev", "generative", "art", "creative", "math", "utilities"],
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",

@@ -30,7 +30,7 @@ export interface BoundedSineParams {
    */
   translateY?: number;
   /**
-   * Inverts the sine function.
+   * Reflects the function around the average y-value.
    * @defaultValue false
    */
   invert?: boolean;
