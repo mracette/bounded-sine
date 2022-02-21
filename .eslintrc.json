@@ -1,0 +1,8 @@
+{
+    "extends": [
+        "@mracette"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    }
+}
